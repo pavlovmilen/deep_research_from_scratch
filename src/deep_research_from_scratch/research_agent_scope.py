@@ -24,7 +24,10 @@ from deep_research_from_scratch.state_scope import AgentState, ClarifyWithUser, 
 
 def get_today_str() -> str:
     """Get current date in a human-readable format."""
-    return datetime.now().strftime("%a %b %-d, %Y")
+    now = datetime.now()
+    weekday = now.strftime("%a")
+    month = now.strftime("%b")
+    return f"{weekday} {month} {now.day}, {now.year}"
 
 # ===== CONFIGURATION =====
 

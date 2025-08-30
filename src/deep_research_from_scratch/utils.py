@@ -22,7 +22,10 @@ from deep_research_from_scratch.prompts import summarize_webpage_prompt
 
 def get_today_str() -> str:
     """Get current date in a human-readable format."""
-    return datetime.now().strftime("%a %b %-d, %Y")
+    now = datetime.now()
+    weekday = now.strftime("%a")
+    month = now.strftime("%b")
+    return f"{weekday} {month} {now.day}, {now.year}"
 
 def get_current_dir() -> Path:
     """Get the current directory of the module.
